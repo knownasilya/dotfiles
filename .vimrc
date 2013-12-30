@@ -5,6 +5,11 @@ set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 set paste                       " enable pasting into vim without side-effects
 autocmd BufEnter * silent! lcd %:p:h  " Change vim to the local dir automatically
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
+augroup END
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -42,6 +47,11 @@ Bundle 'groenewege/vim-less'
 Bundle 'mattn/emmet-vim'
 Bundle 'jwhitley/vim-matchit'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'vim-scripts/vim-coffee-script'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-surround'
 
 filetype plugin indent on     " required!
 
