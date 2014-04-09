@@ -10,7 +10,8 @@ Copy `colors` and `bundle` directories to `~/.vim/`
 For `vim-airline` to work, you must install these [fonts][fonts]
 and set them as your default font (both font selections) in iTerm2 (or whatever terminal you are using). Also might require vertical line height and contrast changes in iTerm2.
 
-Run:
+
+### Install Plugins
 
 ```bash
 vim +BundleInstall
