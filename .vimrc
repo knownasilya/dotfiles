@@ -16,6 +16,9 @@ augroup END
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
+"" Explore tree view
+let g:netrw_liststyle = 3
+
 "" Gutter color
 hi! link SignColumn LineNr
 
@@ -27,6 +30,7 @@ set backspace=indent,eol,start   " backspace through everything in insert mode
 set autoindent                   " Auto indent
 set smartindent                  " Smart indent
 set linespace=0
+"" autocmd FileType js,json,hbs,html,css,less autocmd BufWritePre <buffer> :%s/\s\+$//e  " Autodelete trailing white spaces from specified files
 
 "" Searching
 set hlsearch                     " highlight matches
@@ -43,10 +47,13 @@ set number
 
 "" Mappings
 nmap <S-Enter> O<Esc>
-nmap <CR> o<Esc>"" Airline config
+nmap <CR> o<Esc>
+
+"" Airline config
 "let g:airline_symbols={}
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
+let g:airline_section_c='%F'
 set laststatus=2
 
 "" Syntastic
@@ -58,34 +65,50 @@ let g:user_emmet_mode='a'
 "" Indent Guides
 let g:indent_guides_start_level=2
 
+"" Git
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
+"" Backup and swap files
+set backupdir=~/.vim/_backup//    " where to put backup files.
+set directory=~/.vim/_temp//      " where to put swap files.
+
 "" Vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 
 " Your bundles
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'dart-lang/dart-vim-plugin'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'nono/vim-handlebars'
-Bundle 'pangloss/vim-javascript'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'groenewege/vim-less'
-Bundle 'mattn/emmet-vim'
-Bundle 'jwhitley/vim-matchit'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'vim-scripts/vim-coffee-script'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tpope/vim-surround'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'bling/vim-airline'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/syntastic'
-Bundle 'kshenoy/vim-signature'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'nono/vim-handlebars'
+Plugin 'pangloss/vim-javascript'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'groenewege/vim-less'
+Plugin 'mattn/emmet-vim'
+Plugin 'jwhitley/vim-matchit'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'vim-scripts/vim-coffee-script'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-surround'
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/syntastic'
+Plugin 'kshenoy/vim-signature'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'GutenYe/json5.vim'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'gregsexton/MatchTag'
+Plugin 'matchparenpp'
+Plugin 'moll/vim-node'
 
-filetype plugin indent on     " required!
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
