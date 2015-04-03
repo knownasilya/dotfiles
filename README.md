@@ -14,7 +14,7 @@ and set them as your default font (both font selections) in iTerm2 (or whatever 
 ### Install Plugins
 
 ```bash
-vim +BundleInstall
+vim +PluginInstall
 ```
 
 [fonts]: https://github.com/Lokaltog/powerline-fonts/tree/master/SourceCodePro
