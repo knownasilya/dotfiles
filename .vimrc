@@ -49,6 +49,9 @@ set number
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 
+"" custom commands                                                                                                
+command HideGutter set nonumber|SyntasticReset|GitGutterDisable
+
 "" Airline config
 "let g:airline_symbols={}
 let g:airline_powerline_fonts = 1
