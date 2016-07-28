@@ -1,4 +1,6 @@
-#export PS1="\u \[\e[01;36m\]\W\$ \[\e[00m\]"
+# Git completions http://stackoverflow.com/a/15398153/483616
+source ~/.bash_git
+GIT_PS1_SHOWDIRTYSTATE=true
 export PS1="\u \[\e[01;36m\]\W\$(__git_ps1)\$ \[\e[00m\]"
 
 findPort() {                                                                                                                                                              
