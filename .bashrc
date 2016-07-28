@@ -1,4 +1,5 @@
-export PS1="\u \[\e[01;36m\]\W\$ \[\e[00m\]"
+#export PS1="\u \[\e[01;36m\]\W\$ \[\e[00m\]"
+export PS1="\u \[\e[01;36m\]\W\$(__git_ps1)\$ \[\e[00m\]"
 
 findPort() {                                                                                                                                                              
   lsof -n -i4TCP:$1 | grep LISTEN                                                                                                                                         
